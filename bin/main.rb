@@ -5,4 +5,4 @@ require 'colorize'
 file_launcher = Opening.new(ARGV.first)
 line_inspector = FileChecker.new(file_launcher.pick_lines)
 line_inspector.examine_lines
-FileChecker.publish_results
+line_inspector.publish_results
