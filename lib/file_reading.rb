@@ -1,4 +1,4 @@
-class ReadFile
+class Opening
   attr_reader :file_path
 
   def initialize(file_path)
