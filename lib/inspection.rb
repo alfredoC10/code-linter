@@ -14,27 +14,28 @@ class FileChecker
 
   def spaces_before_semicolon
     @file_lines.each_with_index do |line, idx|
-      unless line.match?(/({|})/) && line.match?(/\s;/)
-        @@results << "\n#{'x '.red}Line #{(idx + 1).to_s.bold.cyan}: unexepected single space before ';', please reomove it\n"
-      end
+        if !line.match?(/({|})/) && line.match?(/;/) && line.match?(/\s;/)
+          @@results << "\n#{'x '.red}Line #{(idx + 1).to_s.bold.cyan}: unexepected single space before ';', please reomove it\n"
+        end
     end
   end
 
   def no_space_after_colon
     @file_lines.each_with_index do |line, idx|
-      unless line.match?(/({|})/) && line.match?(/:/) && line.match(/;/) && !line.match?(/:\s/)
-        @@results << "\n#{'x '.red}Line #{(idx + 1).to_s.bold.cyan}#{": expected single space after ':', please add it".yellow}\n"
+        if !line.match?(/({|})/) && line.match?(/:/) && line.match(/;/) && !line.match?(/:\s/)
+          @@results << "\n#{'x '.red}Line #{(idx + 1).to_s.bold.cyan}#{": expected single space after ':', please add it".yellow}\n"
+        end
       end
     end
   end
 
   def no_space_after_comma
     @file_lines.each_with_index do |line, idx|
-      next unless !line.match?(/({|})/) && line.match(/;/)
-
-      line.split(', ').each do |itm|
-        if itm.match?(/,/)
-          @@results << "\n#{'x '.red}Line #{(idx + 1).to_s.bold.cyan}: expected single space after ',', please add it\n"
+      unless line.match?(/({|})/) || !line.match?(/;/)
+        line.split(', ').each do |itm|
+          if itm.match?(/,/)
+            @@results << "\n#{'x '.red}Line #{(idx + 1).to_s.bold.cyan}: expected single space after ',', please add it\n"
+          end
         end
       end
     end
@@ -67,4 +68,3 @@ class FileChecker
       puts "1 file inspected,#{" #{@@results.size} damages ".green}detected, all the tests have passed!"
     end
   end
-end
