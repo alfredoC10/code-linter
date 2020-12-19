@@ -29,11 +29,11 @@ class FileChecker
 
   def no_space_after_comma
     @file_lines.each_with_index do |line, i|
-      if !line.match?(/({|})/) && line.match?(/;/)
-        line.split(', ').each do |itm|
-          if itm.match?(/,/)
-            @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected single space after ',' ,please add it"
-          end
+      next unless line.match?(/;/)
+
+      line.split(', ').each do |itm|
+        if itm.match?(/,/)
+          @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected single space after ',' ,please add it"
         end
       end
     end
