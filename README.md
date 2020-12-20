@@ -51,37 +51,37 @@ Next, are here examples to better ilustrate the kind of rules this linter looks 
 ### - No spaces before semicolons (;)
 
 - Bad
-<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_semicolon_bad.PNG" width="200px">
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_semicolon_bad.PNG" width="210px">
 
 - Good
-<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_semicolon_good.PNG" width="200px">
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_semicolon_good.PNG" width="210px">
 
 
 ### - Presence of a single space after a colon (:)
 
 - Bad
-<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_colon_bad.PNG" width="150px">
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_colon_bad.PNG" width="140px">
 
 - Good
-<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_colon_good.PNG" width="110px">
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_colon_good.PNG" width="120px">
 
 
 ### Presence of a single space after a comma (,)
 
 - Bad
-<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_comma_bad.PNG" width="300px">
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_comma_bad.PNG" width="420px">
 
 - Good
-<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_comma_good.PNG" width="300px">
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_comma_good.PNG" width="420px">
 
 
 ### Each selector must be in a new line when they are listed in the same rule
 
 - Bad
-<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/selector_bad.PNG" width="120px">
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/selector_bad.PNG" width="130px">
 
 - Good
-<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/selector_good.PNG" width="120px">
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/selector_good.PNG" width="130px">
 
 ## Authors
 
