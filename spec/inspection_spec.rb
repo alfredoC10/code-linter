@@ -1,13 +1,15 @@
-require_relative '../lib/inspection.rb'
+require_relative '../lib/inspection'
 
 describe FileChecker do
-  let(:one) { FileChecker.new(["* {", "  margin: 0 ;", "  padding: 0;", "  box-sizing: border-box ;"]) }
-  let(:two) { FileChecker.new(["* {", "  margin: 0;", "  padding: 0;", "  box-sizing: border-box;"]) }
-  let(:three) { FileChecker.new(["* {", "  margin:0;", "  padding: 0;", "  box-sizing: border-box;"]) }
-  let(:four) { FileChecker.new(["* {", "  margin: 0;", "  font-family: ARS Maquette,Helvetica Neue, Arial,sans-serif;", "}"]) }
-  let(:five) { FileChecker.new(["html, body {", "  margin: 0;", "  padding: 0;", "}"]) }
-  let(:six) { FileChecker.new(["* {", "  margin: 0;", "  padding: 0;", "  box-sizing: border-box;"]) }
-  let(:seven) { FileChecker.new(["* {", "  margin: 0 ;", "  padding:0;", "  box-sizing: border-box;"]) }
+  let(:one) { FileChecker.new(['* {', '  margin: 0 ;', '  padding: 0;', '  box-sizing: border-box ;']) }
+  let(:two) { FileChecker.new(['* {', '  margin: 0;', '  padding: 0;', '  box-sizing: border-box;']) }
+  let(:three) { FileChecker.new(['* {', '  margin:0;', '  padding: 0;', '  box-sizing: border-box;']) }
+  let(:four) do
+    FileChecker.new(['* {', '  margin: 0;', '  font-family: ARS Maquette,Helvetica Neue, Arial,sans-serif;', '}'])
+  end
+  let(:five) { FileChecker.new(['html, body {', '  margin: 0;', '  padding: 0;', '}']) }
+  let(:six) { FileChecker.new(['* {', '  margin: 0;', '  padding: 0;', '  box-sizing: border-box;']) }
+  let(:seven) { FileChecker.new(['* {', '  margin: 0 ;', '  padding:0;', '  box-sizing: border-box;']) }
 
   describe '#examine_lines' do
     context 'Receives an array with the lines of a css file and looks for errors' do
@@ -39,21 +41,20 @@ describe FileChecker do
   end
 
   describe '#publish_results' do
-    context "puts the results to the console" do
-      it "Puts only a string, when there are no errors" do
+    context 'puts the results to the console' do
+      it 'Puts only a string, when there are no errors' do
         var = []
         six.examine_lines
         var << six.publish_results
         expect(var.length).to eql(1)
       end
 
-      it "Puts more than one string, when there are errors" do
+      it 'Puts more than one string, when there are errors' do
         v = []
         seven.examine_lines
         v << seven.publish_results.to_a
         expect(v.size.positive?).to be_truthy
       end
-
     end
   end
 end
