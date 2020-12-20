@@ -23,7 +23,7 @@ describe FileChecker do
         expect(three.results.length).to eql(1)
       end
 
-      it "Pushes a string to the variable 'results' every time it doesn't find a space after a comma inside curly braces" do
+      it "Pushes a string to 'results' every time it doesn't find a space after a comma inside curly braces" do
         four.examine_lines
         expect(four.results.length).to eql(2)
       end
