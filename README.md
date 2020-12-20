@@ -47,26 +47,41 @@ ruby bin/main.rb ./css/sample_bad.css
 ## Examples of good and bad practices
 Next, are here examples to better ilustrate the kind of rules this linter looks for to be followed, while writing CSS code:
 
+
 ### - No spaces before semicolons (;)
+
 - Bad
-<img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/development/images/board_numbers.PNG" width="100px">
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_semicolon_bad.PNG" width="100px">
 
 - Good
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_semicolon_good.PNG" width="100px">
+
 
 ### - Presence of a single space after a colon (:)
+
 - Bad
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_colon_bad.PNG" width="100px">
 
 - Good
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_colon_good.PNG" width="100px">
+
 
 ### Presence of a single space after a comma (,)
+
 - Bad
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_comma_bad.PNG" width="100px">
 
 - Good
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/space_comma_good.PNG" width="100px">
+
 
 ### Each selector must be in a new line when they are listed in the same rule
+
 - Bad
+<img src="https://github.com/Huemac-Alfredo/code-linter/blob/code/images/selector_bad.PNG" width="100px">
 
 - Good
+<img src="hhttps://github.com/Huemac-Alfredo/code-linter/blob/code/images/selector%20good.PNG" width="100px">
 
 ## Authors
 
