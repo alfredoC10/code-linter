@@ -3,7 +3,7 @@
 ## About
 This code linter tool comes from working on the capstone project of the Microverse Ruby course, a interesting experience due to lots of new concepts that can be learned. The tool delivers feedback on programming misspellings made in a CSS file. Pure Ruby code was used in its building. I utilized Rubocop as code linter to adhere to the business requirements, Gitflow and good practices assigned to me.
 
-![screenshot](https://github.com/Huemac-Alfredo/bubble-sort-project/blob/master/screen_shot.PNG)
+![screenshot](https://github.com/Huemac-Alfredo/code-linter/blob/code/images/linter.PNG)
 
 ## good practices it looks for
 - No spaces before semicolons
