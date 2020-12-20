@@ -23,18 +23,18 @@ class FileChecker
     @file_lines.each_with_index do |line, i|
       if !line.match?(/({|})/) && line.match?(/:/) && line.match(/;/) && !line.match?(/:\s/)
         @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected space after ':', add it"
+      elsif !line.match?(/({|})/) && line.match?(/:/) && line.match(/;/) && line.match?(/:\s\s+/)
+        @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: there are more than one single space after ':',"
       end
     end
   end
 
   def no_space_after_comma
     @file_lines.each_with_index do |line, i|
-      next unless line.match?(/;/)
-
-      line.split(', ').each do |itm|
-        if itm.match?(/,/)
-          @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected single space after ',' ,please add it"
-        end
+      if line.match?(/;/) && line.match?(/,\S/)
+        @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected single space after ',' ,please add it"
+      elsif line.match?(/;/) && line.match?(/,\s\s+/)
+        @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected single space after ',', please remove the rest"
       end
     end
   end
