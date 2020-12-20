@@ -2,7 +2,7 @@ require_relative 'file_reading'
 require 'colorize'
 
 class FileChecker
-  attr_reader :file_lines
+  attr_reader :file_lines, :results
 
   def initialize(file_lines)
     @file_lines = file_lines
