@@ -26,7 +26,7 @@ class FileChecker
       if !line.match?(/({|})/) && line.match?(/:/) && !line.match?(/:\s/)
         @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected space after ':', add it"
       elsif !line.match?(/({|})/) && line.match?(/:/) && line.match?(/:\s\s+/)
-        @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: there are more than one single space after ':',"
+        @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: there is more than one single space after ':',"
       end
     end
   end
@@ -36,7 +36,7 @@ class FileChecker
       if line.match?(/;/) && line.match?(/,\S/)
         @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected single space after ',' ,please add it"
       elsif line.match?(/;/) && line.match?(/,\s\s+/)
-        @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: there are more than a single space after ','"
+        @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: there is more than a single space after ','"
       end
     end
   end
