@@ -1,0 +1,16 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box ;
+}
+
+html, body {
+  font-family: ARS Maquette,Helvetica Neue, Arial,sans-serif;
+  font-size: 13px;
+}
+
+.nav1-ul a {
+  text-decoration: none;
+  color: rgb(161, 161, 161);
+  font-size: 13px;
+}
