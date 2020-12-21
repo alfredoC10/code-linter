@@ -19,25 +19,29 @@ class FileChecker
     end
   end
 
-  def no_space_after_colon
+  # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/PerceivedComplexity
+  def space_after_colon
     @file_lines.each_with_index do |line, i|
-      if !line.match?(/({|})/) && line.match?(/:/) && line.match(/;/) && !line.match?(/:\s/)
+      if !line.match?(/({|})/) && line.match?(/:/) && !line.match?(/:\s/)
         @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected space after ':', add it"
-      elsif !line.match?(/({|})/) && line.match?(/:/) && line.match(/;/) && line.match?(/:\s\s+/)
+      elsif !line.match?(/({|})/) && line.match?(/:/) && line.match?(/:\s\s+/)
         @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: there are more than one single space after ':',"
       end
     end
   end
 
-  def no_space_after_comma
+  def space_after_comma
     @file_lines.each_with_index do |line, i|
       if line.match?(/;/) && line.match?(/,\S/)
         @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected single space after ',' ,please add it"
       elsif line.match?(/;/) && line.match?(/,\s\s+/)
-        @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: expected single space after ',', please remove the rest"
+        @results << "\n#{'x '.red}Line #{(i + 1).to_s.bold.cyan}: there are more than a single space after ','"
       end
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics/PerceivedComplexity
 
   def no_selector_new_line
     @file_lines.each_with_index do |line, i|
@@ -51,8 +55,8 @@ class FileChecker
 
   def examine_lines
     spaces_before_semicolon
-    no_space_after_colon
-    no_space_after_comma
+    space_after_colon
+    space_after_comma
     no_selector_new_line
   end
 
