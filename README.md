@@ -91,7 +91,7 @@ Next, are here examples to better ilustrate the kind of rules this linter looks 
 
 - Github: [@Huemac-Alfredo](https://github.com/Huemac-Alfredo)
 - Twitter: [@AlfredoHuemac](https://twitter.com/AlfredoHuemac)
-- Linkedin: [Alfredo Huemac Córdova](https://www.linkedin.com/in/alfredo-huemac-c%C3%B3rdova-173b481b2/)
+- Linkedin: [Alfredo Huemac Córdova](https://https://www.linkedin.com/in/alfredo-huemac/)
 
 ## 🤝 Contributing
 
